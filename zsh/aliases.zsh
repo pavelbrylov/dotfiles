@@ -2,7 +2,7 @@
 
 # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
-
+alias postgres_start='postgres -D /usr/local/var/postgres'
 # YADR support
 alias yav='yadr vim-add-plugin'
 alias yuv='yadr update-plugins' #FIXME: backwards compatibility. Kill me after Jan 1, 2013
@@ -45,8 +45,8 @@ alias zr='source ~/.zshrc'
 
 # Git Aliases
 alias gs='git status'
-alias gstsh='git stash'
-alias gst='git stash'
+alias gstsh='git status'
+alias gst='git status'
 alias gsh='git show'
 alias gshw='git show'
 alias gshow='git show'
