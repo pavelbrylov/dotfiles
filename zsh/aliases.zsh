@@ -45,8 +45,10 @@ alias zr='source ~/.zshrc'
 
 # Git Aliases
 alias gs='git status'
-alias gstsh='git status'
 alias gst='git status'
+alias gstsh='git stash'
+alias gsp='git stash pop'
+alias gsa='git stash apply'
 alias gsh='git show'
 alias gshw='git show'
 alias gshow='git show'
@@ -95,6 +97,8 @@ alias gsm='git submodule'
 alias gsmi='git submodule init'
 alias gsmu='git submodule update'
 alias gt='git t'
+alias gbg='git bisect good'
+alias gbb='git bisect bad'
 
 # Common shell functions
 alias less='less -r'
@@ -108,7 +112,7 @@ alias cl='clear'
 alias gz='tar -zcvf'
 
 # Ruby
-alias c='pry -r ./config/environment' # Rails 3
+alias c='rails c' # Rails 3
 alias co='script/console --irb=pry' # Rails 2
 alias ts='thin start'
 alias ms='mongrel_rails start'
@@ -135,3 +139,13 @@ alias portforward='sudo ipfw add 1000 forward 127.0.0.1,3000 ip from any to any 
 
 alias rdm='rake db:migrate'
 alias rdmr='rake db:migrate:redo'
+
+# Zeus
+alias zs='zeus server'
+alias zc='zeus console'
+
+# Rspec
+alias rs='rspec spec'
+
+# Sprintly - https://github.com/nextbigsoundinc/Sprintly-GitHub
+alias sp='sprintly'
