@@ -5,11 +5,13 @@
      _____| / ___ ( (_| | |
     (_______\_____|\____|_|
 
-    # Yet Another Dotfile Repo v1.0
-    # Now with Prezto!
+    # Yet Another Dotfile Repo v1.1
+    # Now with Prezto and Vundle!
 
     git clone https://github.com/skwp/dotfiles ~/.yadr
     cd ~/.yadr && rake install
+
+**Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
 This is a collection of best of breed tools from across the web,
 from scouring other people's dotfile repos, blogs, and projects.
@@ -50,6 +52,15 @@ cd ~/.yadr && rake install
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
 about each one, use `ASK=true rake install`
 
+# Additional Installation
+
+ * [Highly recommended: Install iTerm theme](https://github.com/altercation/solarized/tree/master/iterm2-colors-solarized)
+ * [Highly recommended: Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
+
+The escape key is the single most used key in vim.
+Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
+If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
+
 ### Upgrading
 
 Upgrading is easy.
@@ -64,24 +75,12 @@ rake update
 
 Read on to learn what YADR provides!
 
-### Public service announcement: stop abusing your hands!
-
-[Remap caps-lock to escape with PCKeyboardHack](http://pqrs.org/macosx/keyremap4macbook/pckeyboardhack.html)
-
-The escape key is the single most used key in vim.
-Old keyboards used to have Ctrl where caps lock is today. But it's even better if you put escape there.
-If you're hitting a small target in the corner, you are slowing yourself down considerably, and probably damaging your hands with repetitive strain injuries.
-
 ### [Homebrew](http://mxcl.github.com/homebrew/)
 
 Homebrew is _the missing package manager for OSX_. Installed automatically.
 
-We automatically install a few useful packages including ack, ctags, git, and hub
+We automatically install a few useful packages including ack, ctags, git, and hub, and the silver searcher ('ag')
 You can install macvim from brew as well, or download it from their website.
-
-```bash
-brew install ack ctags git hub macvim tmux reattach-to-user-namespace
-```
 
 ### Github Issues: [ghi gem](https://github.com/stephencelis/ghi)
 
@@ -156,20 +155,11 @@ as an actual debugger on MRI 1.9.2+ by installing [pry-debugger](https://github.
 
 [Learn more about YADR's pry customizations and how to install](https://github.com/skwp/dotfiles/blob/master/README-pry.md)
 
-### Git User Info
+### Git Configuration
 
-Since the gitconfig doesn't contain the user info, I recommend using env variables. Put the following in
-your `~/.secrets` file which is automatically referenced by the provided zshrc:
+You can customize the standard Git configuration in `~/.gitconfig.user`. Any configuration in this file will override the default configuration.
 
-    # Set your git user info
-    export GIT_AUTHOR_NAME='Your Name'
-    export GIT_AUTHOR_EMAIL='you@domain.com'
-    export GIT_COMMITTER_NAME='Your Name'
-    export GIT_COMMITTER_EMAIL='you@domain.com'
-
-    # Optionally, set your GitHub credentials
-    export GITHUB_USER='your_user_name'
-    export GITHUB_TOKEN='your_github_token'
+It is recommended to use this file to set your user info. Alternately, you can set the appropriate environment variables in your `~/.secrets`.
 
 ### Git Customizations:
 
@@ -372,7 +362,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
  * AnsiEsc - inteprets ansi color codes inside log files. great for looking at Rails logs
  * solarized - a color scheme scientifically calibrated for awesomeness (including skwp mods for ShowMarks)
- * csapprox - helps colors to be represented correctly on terminals (even though we expect to use MacVim)
  * Powerline - beautiful vim status bar. Requires patched fonts (installed from fonts/ directory)
 
 #### Coding
@@ -411,7 +400,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * tabularize - align code effortlessly by using :Tabularize /[character] to align by a character, or try the keymaps
  * yankring - effortless sanity for pasting. every time you yank something it goes into a buffer. after hitting p to paste, use ctrl-p or ctrl-n to cycle through the paste options. great for when you accidentally overwrite your yank with a delete.
  * surround - super easy quote and tag manipulation - ysiw" - sourround inner word with quotes. ci"' - change inner double quotes to single quotes, etc
- * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches
+ * greplace - use :Gsearch to find across many files, replace inside the changes, then :Greplace to do a replace across all matches - made lightning fast with Silver Searcher
  * ConqueTerm - embedded fully colorful shell inside your vim
  * vim-ruby-conque - helpers to run ruby,rspec,rake within ConqueTerm
  * vim-markdown-preview - :Mm to view your README.md as html
@@ -426,7 +415,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
 
 #### General enhancements that don't add new commands
 
- * Arpeggio - allows you to define key-chord combinations
  * IndexedSearch - when you do searches will show you "Match 2 of 4" in the status line
  * delimitMate - automatically closes quotes
  * SearchComplete - tab completion in the / search window
@@ -504,9 +492,12 @@ Please explore these people's work.
 
 ### Contributors
 
+Yadr is made possible by many awesome people, too many to list :) But here are a few of the bigger contributors and core committers.
+
  * Initial Version: @skwp
  * Cleanup, auto installer: @kylewest
  * Switch from oh-my-zsh to Presto: @JeanMertz
+ * Vundle migration: @duhanebel
 
 
 ### For more tips and tricks

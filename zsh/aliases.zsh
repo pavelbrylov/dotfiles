@@ -5,6 +5,8 @@ yadr=$HOME/.yadr
 alias postgres_start='postgres -D /usr/local/var/postgres'
 # YADR support
 alias yav='yadr vim-add-plugin'
+alias ydv='yadr vim-delete-plugin'
+alias ylv='yadr vim-list-plugin'
 alias yup='yadr update-plugins'
 alias yip='yadr init-plugins'
 

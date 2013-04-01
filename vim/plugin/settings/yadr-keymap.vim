@@ -1,15 +1,8 @@
-" Arpeggio lets us define key-chord combos (simultaneous key presses)
-call arpeggio#load()
-
 " ========================================
 " General vim sanity improvements
 " ========================================
 "
 "
-" Change leader to a comma because the backslash is too far away
-" That means all \x commands turn into ,x
-let mapleader=","
-
 " alias yw to yank the entire word 'yank inner word'
 " even if the cursor is halfway inside the word
 " FIXME: will not properly repeat when you use a dot (tie into repeat.vim)
