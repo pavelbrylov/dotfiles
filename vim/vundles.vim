@@ -106,7 +106,9 @@ Bundle "myhere/vim-nodejs-complete.git"
 Bundle "guileen/vim-node.git"
 Bundle "jamescarr/snipmate-nodejs.git"
 Bundle "hallettj/jslint.vim.git"
-Bundle "derekwyatt/vim-scala"
+Bundle "derekwyatt/vim-scala.git"
+Bundle "leafgarland/typescript-vim.git"
+
 
 "Filetype plugin indent on is required by vundle
 filetype plugin indent on
