@@ -8,8 +8,7 @@
     # Yet Another Dotfile Repo v1.1
     # Now with Prezto and Vundle!
 
-    git clone https://github.com/skwp/dotfiles ~/.yadr
-    cd ~/.yadr && rake install
+    sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
 
 **Always be sure to run `rake update` after pulling to ensure plugins are updated**
 
@@ -45,12 +44,14 @@ Installation is automated via `rake` and the `yadr` command. To get
 started please run:
 
 ```bash
-git clone https://github.com/skwp/dotfiles ~/.yadr
-cd ~/.yadr && rake install
+sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`"
 ```
 
 **Note:** YADR will automatically install all of its subcomponents. If you want to be asked
-about each one, use `ASK=true rake install`
+about each one, use:
+```bash
+sh -c "`curl -fsSL https://raw.github.com/skwp/dotfiles/master/install.sh`" -s ask
+```
 
 # Additional Installation
 
@@ -210,6 +211,8 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `Cmd-j` and `Cmd-k` to move up and down roughly by functions
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
+ * `,tn` - Toggles between absolute and relative line numbers
+ * `:NumbersEnable` - Enable automatic toggling between absolute (insert mode) and relative (normal mode) line numbers
 
 #### LustyJuggler
 
@@ -351,6 +354,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
  * CtrlP - Ctrl-p or ,t to find a file
+ * Visual-star-search - make the * (star) search in visual mode behave like expected: searching for the whole selection instead of just the word under the cursor.
 
 #### Git
 
@@ -435,15 +439,17 @@ If you didn't have janus before, it is recommended to just put it in `~/.yadr/vi
 
 ### Adding your own vim plugins
 
-YADR comes with a dead simple plugin manager that just uses git submodules, without any fancy config files.
+YADR comes with a dead simple plugin manager that just uses vundles and submodules, without any fancy config files.
+
+Add a plugin
 
     yav -u https://github.com/airblade/vim-rooter
 
-Delete a plugin (Coming Soon)
+Delete a plugin 
 
-   ydv -p airblade-vim-rooter
+    ydv -u airblade/vim-rooter
 
-The aliases (yav=yadr vim-add-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
+The aliases (yav=yadr vim-add-plugin), (ydp=yadr vim-delete-plugin) and (yuv=yadr vim-update-all-plugins) live in the aliases file.
 You can then commit the change. It's good to have your own fork of this project to do that.
 
 
