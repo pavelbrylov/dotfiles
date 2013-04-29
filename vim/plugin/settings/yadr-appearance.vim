@@ -16,7 +16,8 @@ if has("gui_running")
   set lines=60
   set columns=190
 
-  set guifont=Inconsolata:h16,Inconsolata\ XL:h13,
+  set guifont=Inconsolata
+  ":h16,Inconsolata\ XL:h13,
   ",Monaco:h17
 else
   "dont load csapprox if we no gui support - silences an annoying warning
