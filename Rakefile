@@ -49,7 +49,7 @@ end
 
 task :submodule_init do
   unless ENV["SKIP_SUBMODULES"]
-    run %{ git submodule update --init --recursive }
+    run %{ git submodule init }
   end
 end
 
@@ -62,7 +62,7 @@ task :submodules do
 
     run %{
       cd $HOME/.yadr
-      git submodule foreach 'git fetch origin; git checkout master; git reset --hard origin/master; git submodule update --recursive; git clean -df'
+      git submodule update --recursive
       git clean -df
     }
     puts
@@ -144,7 +144,7 @@ def install_homebrew
   puts "======================================================"
   puts "Installing Homebrew packages...There may be some warnings."
   puts "======================================================"
-  run %{brew install zsh ack ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
+  run %{brew install zsh ctags git hub tmux reattach-to-user-namespace the_silver_searcher}
   puts
   puts
 end
