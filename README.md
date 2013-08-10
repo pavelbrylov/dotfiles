@@ -125,7 +125,6 @@ Make sure you follow the naming convention of `prompt_[name]_setup`
 touch ~/.zsh.prompts/prompt_mytheme_setup
 ```
 
-Check out ~/.yadr/zsh/prezto-themes/prompt_skwp_setup for an example of how to write a prompt.
 See also the [Prezto](https://github.com/sorin-ionescu/prezto) project for more info on themes.
 
 ### Customizing ZSH & Picking a theme
@@ -135,10 +134,10 @@ In these directories, you can place files to customize things that load before a
 
 For example, to override the theme, you can do something like this:
 ```
-echo "prompt skwp" > ~/.zsh.after/prompt.zsh
+echo "prompt yourprompt" > ~/.zsh.after/prompt.zsh
 ```
 
-Next time you load your shell, this file will be read and your prompt will be the skwp prompt. Use `prompt -l` to see the available prompts.
+Next time you load your shell, this file will be read and your prompt will be the youprompt prompt. Use `prompt -l` to see the available prompts.
 
 ### Included ZSH Customizations
 
@@ -212,10 +211,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * `Ctrl-o` - Old cursor position - this is a standard mapping but very useful, so included here
  * `Ctrl-i` - opposite of Ctrl-O (again, this is standard)
 
-#### LustyJuggler
-
- * `,lj` - show buffers (LustyJuggler buffer search), just type to fuzzy match a buffer name
- * `,lf` - file system browser
 
 #### Rails
 
@@ -348,7 +343,6 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * NERDTree-tabs - makes NERDTree play nice with MacVim tabs so that it's on every tab
  * ShowMarks - creates a visual gutter to the left of the number column showing you your marks
  * EasyMotion - hit ,<esc> (forward) or ,<Shift-Esc> (back) and watch the magic happen. Just type the letters and jump directly to your target - in the provided vimrc the keys are optimized for home row mostly. Using @skwp modified EasyMotion which uses vimperator-style two character targets.
- * LustyJuggler/Explorer - hit B, type buf name to match a buffer, or type S and use the home row keys to select a buffer
  * TagBar - hit ,T to see a list of methods in a class (uses ctags)
  * CtrlP - ,t to find a file
  * Visual-star-search - make the * (star) search in visual mode behave like expected: searching for the whole selection instead of just the word under the cursor.
@@ -417,6 +411,7 @@ If you omit the key combo, you'll get a list of all the maps. You can do the sam
  * change-inside-surroundings - change content inside delimiters like quotes/brackets
  * Specky - used for color highlighting rspec correctly even if specs live outside of spec/ (rails.vim doesn't handle this)
  * Ag - use :Ag to search across multiple files. Faster than Grep and Ack.
+ * vim-session: use `:SaveSession` and `:OpenSession` to come back to your saved window layout
 
 #### General enhancements that don't add new commands
 
@@ -475,7 +470,6 @@ These hacks are Lion-centric. May not work for other OS'es. My favorite mods inc
  * NValt - Notational Velocity alternative fork - http://brettterpstra.com/project/nvalt/ - syncs with SimpleNote
  * Vimium for Chrome - vim style browsing. The `f` to type the two char alias of any link is worth it.
  * QuickCursor - gives you Apple-Shift-E to edit any OSX text field in vim.
- * brew install autojump - will track your commonly used directories and let you jump there. With the zsh plugin you can just type `j [dirspec]`, a few letters of the dir you want to go to.
 
 
 ### Credits

@@ -49,7 +49,7 @@ end
 
 task :submodule_init do
   unless ENV["SKIP_SUBMODULES"]
-    run %{ git submodule init }
+    run %{ git submodule update --init --recursive }
   end
 end
 
@@ -139,6 +139,12 @@ def install_homebrew
     run %{ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"}
   end
 
+  puts
+  puts
+  puts "======================================================"
+  puts "Updating Homebrew."
+  puts "======================================================"
+  run %{brew update}
   puts
   puts
   puts "======================================================"
