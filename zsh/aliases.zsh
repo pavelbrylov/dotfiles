@@ -1,5 +1,7 @@
 # Aliases in this file are bash and zsh compatible
 
+alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
+
 # Don't change. The following determines where YADR is installed.
 yadr=$HOME/.yadr
 alias postgres_start='postgres -D /usr/local/var/postgres'
