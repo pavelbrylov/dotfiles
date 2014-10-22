@@ -1,4 +1,4 @@
-# set your user tokens as enivornment variables, such as ~/.secrets
+# set your user tokens as environment variables, such as ~/.secrets
 # See the README for examples.
 [color]
   ui = true
@@ -9,8 +9,8 @@
 [color "diff"]
   meta = yellow bold
   frag = magenta bold
-  old = red bold
-  new = green bold
+  old = red
+  new = green
 [alias]
   # add
   a = add                           # add
@@ -21,7 +21,7 @@
   snapshots = !git stash list --grep snapshot
 
   #via http://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
-  recent-branches = !git for-each-ref --count=5 --sort=-committerdate refs/heads/ --format='%(refname:short)'
+  recent-branches = !git for-each-ref --count=15 --sort=-committerdate refs/heads/ --format='%(refname:short)'
 
   # branch
   b = branch -v                     # branch (verbose)
@@ -49,7 +49,7 @@
   l = log --graph --date=short
   changes = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\" --name-status
   short = log --pretty=format:\"%h %cr %cn %Cgreen%s%Creset\"
-  changelog = log --pretty=format:\" * %s\"
+  simple = log --pretty=format:\" * %s\"
   shortnocolor = log --pretty=format:\"%h %cr %cn %s\"
 
   # pull

@@ -34,7 +34,7 @@ syntax on
 let mapleader=","
 
 " =============== Vundle Initialization ===============
-" This loads all the plugins specified in ~/.vim/vundle.vim
+" This loads all the plugins specified in ~/.vim/vundles.vim
 " Use Vundle plugin to manage all other plugins
 if filereadable(expand("~/.vim/vundles.vim"))
   source ~/.vim/vundles.vim
@@ -49,10 +49,11 @@ set nowb
 " ================ Persistent Undo ==================
 " Keep undo history across sessions, by storing in file.
 " Only works all the time.
-
-silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
-set undofile
+if has('persistent_undo')
+  silent !mkdir ~/.vim/backups > /dev/null 2>&1
+  set undodir=~/.vim/backups
+  set undofile
+endif
 
 " ================ Indentation ======================
 
@@ -95,9 +96,12 @@ set wildignore+=tmp/**
 set wildignore+=*.png,*.jpg,*.gif
 
 "
-
 " ================ Scrolling ========================
 
 set scrolloff=8         "Start scrolling when we're 8 lines away from margins
 set sidescrolloff=15
 set sidescroll=1
+
+
+" ================ Custom Settings ========================
+so ~/.yadr/vim/settings.vim
