@@ -77,7 +77,7 @@ imap <C-a> <esc>wa
 " Cmd-Shift-N for nerd tree
 nmap <D-N> :NERDTreeToggle<CR>
 nmap <leader>n :NERDTreeToggle<CR>
-=======
+" =======
 " Open the project tree and expose current file in the nerdtree with Ctrl-\
 " " calls NERDTreeFind iff NERDTree is active, current window contains a modifiable file, and we're not in vimdiff
 function! OpenNerdTree()
